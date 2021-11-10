@@ -1,2 +1,2 @@
 from math import factorial
-print( sum(map(int, str(factorial(100)))))
+print(sum(map(int, str(factorial(100)))))
