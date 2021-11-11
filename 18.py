@@ -16,9 +16,12 @@ nt = [
     [63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
     [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23]
 ]
+
 l = len(nt)
-for i in range(l):
-    for j in range(l-i-1):
-        nt[l-i-2][j] = nt[l-i-2][j] + nt[l-i-1][j] if nt[l-i-2][j] + nt[l-i -
-                                                                        1][j] > nt[l-i-2][j] + nt[l-i-1][j+1] else nt[l-i-2][j] + nt[l-i-1][j+1]
+while l > 1:
+    for i in range(len(nt[l-2])):
+        nt[l-2][i] = nt[l-2][i] + nt[l-1][i] if nt[l-2][i] + \
+            nt[l-1][i] > nt[l-2][i] + nt[l-1][i+1] else nt[l-2][i] + nt[l-1][i+1]
+    nt.pop()
+    l -= 1
 print(nt[0][0])
