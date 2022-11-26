@@ -1,4 +1,4 @@
-# What is the 10 001st prime number?
+# https://projecteuler.net/problem=7
 from math import sqrt
 
 
@@ -25,4 +25,5 @@ while len(primes) < 10001:
         primes.append(j)
     j += 1
 
+# print(primes)
 print(primes[-1])
